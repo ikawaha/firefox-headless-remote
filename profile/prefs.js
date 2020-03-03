@@ -74,3 +74,7 @@ user_pref("experiments.manifest.uri", "");
 user_pref("experiments.supported", false);
 user_pref("experiments.activeExperiment", false);
 user_pref("network.allow-experiments", false);
+
+// languages
+user_pref("font.language.group", "ja");
+user_pref("intl.accept_languages", "ja, en-us, en");
