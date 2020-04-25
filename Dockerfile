@@ -13,16 +13,12 @@ RUN apt-get update && \
         language-pack-ja \
         fonts-noto \
         fonts-noto-cjk \
-        fonts-noto-color-emoji && \
-    groupadd firefox && \
-    useradd --create-home --gid firefox firefox && \
-    chown --recursive firefox:firefox /home/firefox/
+        fonts-noto-color-emoji \
+        gosu
 
-COPY --chown=firefox:firefox entrypoint.sh /home/firefox/
-COPY --chown=firefox:firefox profile/ /home/firefox/profile/
-
-USER firefox
+COPY entrypoint.sh /
+COPY profile/ /profile/
 
 EXPOSE 2828
 
-ENTRYPOINT ["dumb-init", "--", "/bin/sh", "/home/firefox/entrypoint.sh"]
+ENTRYPOINT ["dumb-init", "--", "/bin/sh", "entrypoint.sh"]
