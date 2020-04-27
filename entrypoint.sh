@@ -9,7 +9,7 @@ groupmod -g $GROUP_ID firefox
 export HOME=/home/firefox
 
 cp entrypoint.sh /home/firefox/
-cp -r /profile /home/firefox/profile/
+cp -r /profile /home/firefox/
 
 chown -R firefox:firefox /home/firefox/
 
